@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Download Fash Tutoring for Windows</title>
+<meta name="description" content="Download Fash Tutoring for Windows as an installer or as a full app you can run without installing.">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --panel: #151318;
+    --line: rgba(255,255,255,0.08);
+    --text: #f4f2f7;
+    --muted: #9a94a6;
+    --accent: #7c3aed;
+    --accent-2: #d946ef;
+    --glow: rgba(124,58,237,0.35);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: dark; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    background-image:
+      radial-gradient(60rem 40rem at 85% -10%, rgba(124,58,237,0.22), transparent 60%),
+      radial-gradient(40rem 30rem at -10% 110%, rgba(217,70,239,0.12), transparent 60%);
+    background-repeat: no-repeat;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 8px; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 22px 0; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; text-decoration: none; }
+  .brand-mark {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; place-items: center; font-size: 15px; font-weight: 800; color: #fff;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+    padding: 40px 0 72px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 5.4vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    max-width: 12ch;
+  }
+  .lead { margin-top: 20px; color: var(--muted); font-size: 18px; max-width: 46ch; }
+
+  .downloads { margin-top: 34px; display: grid; gap: 14px; max-width: 480px; }
+
+  .dl {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .dl:hover { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(124,58,237,0.12); }
+  .dl:active { transform: translateY(1px); }
+  .dl.primary {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 10px 34px var(--glow);
+  }
+  .dl.primary:hover { box-shadow: 0 12px 40px rgba(217,70,239,0.45); }
+  .dl svg { width: 26px; height: 26px; flex-shrink: 0; }
+  .dl-text { flex: 1; min-width: 0; }
+  .dl-title { font-weight: 700; font-size: 17px; }
+  .dl-sub { font-size: 13.5px; opacity: 0.8; }
+  .dl:not(.primary) .dl-sub { color: var(--muted); opacity: 1; }
+  .dl-size { font-size: 13px; opacity: 0.85; white-space: nowrap; }
+  .dl.missing { opacity: 0.5; pointer-events: none; }
+
+  .specs { margin-top: 18px; color: var(--muted); font-size: 14px; }
+
+  /* the app window: the one memorable element */
+  .window {
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: #0a0a0c;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03), 0 0 90px rgba(124,58,237,0.22);
+    overflow: hidden;
+    transform: rotate(1.2deg);
+  }
+  .win-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; background: #1a1a1c; font-size: 12px; color: #bbb;
+  }
+  .win-bar i { width: 10px; height: 10px; border-radius: 50%; background: #333; display: block; }
+  .win-bar span { margin-left: 6px; }
+  .win-body { display: grid; grid-template-columns: 96px 1fr; min-height: 300px; }
+  .win-side { background: #0f0f10; border-right: 1px solid rgba(255,255,255,0.05); padding: 12px 8px; display: grid; gap: 6px; align-content: start; }
+  .win-side b { display: block; height: 26px; border-radius: 8px; background: rgba(255,255,255,0.05); }
+  .win-side b:first-child { background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .win-main { padding: 18px; }
+  .win-search { height: 30px; border-radius: 20px; background: rgba(255,255,255,0.06); margin-bottom: 16px; }
+  .win-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .win-grid div { aspect-ratio: 4 / 3; border-radius: 10px; }
+  .win-grid div:nth-child(1) { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+  .win-grid div:nth-child(2) { background: linear-gradient(135deg, #d946ef, #86198f); }
+  .win-grid div:nth-child(3) { background: linear-gradient(135deg, #2563eb, #1e3a8a); }
+  .win-grid div:nth-child(4) { background: linear-gradient(135deg, #0891b2, #164e63); }
+  .win-grid div:nth-child(5) { background: linear-gradient(135deg, #db2777, #831843); }
+  .win-grid div:nth-child(6) { background: linear-gradient(135deg, #059669, #064e3b); }
+
+  section.info { border-top: 1px solid var(--line); padding: 56px 0; }
+  .info-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+  h2 { font-size: 26px; letter-spacing: -0.02em; margin-bottom: 18px; }
+  ol.steps { list-style: none; counter-reset: s; display: grid; gap: 18px; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 44px; }
+  ol.steps li::before {
+    content: counter(s);
+    position: absolute; left: 0; top: 0;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: rgba(124,58,237,0.18); color: #d9c8ff; font-weight: 700; font-size: 14px;
+  }
+  ol.steps strong { display: block; }
+  ol.steps span, .note p { color: var(--muted); font-size: 15px; }
+
+  .note { padding: 22px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); }
+  .note h3 { font-size: 17px; margin-bottom: 8px; }
+  .note + .note { margin-top: 14px; }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 13.5px; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 44px; padding-bottom: 48px; }
+    .window { transform: none; }
+    .info-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark">F</span> Fash Tutoring</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Fash Tutoring for Windows</h1>
+      <p class="lead">Games, music, chat and a built-in browser in one desktop app. Install it, or run the full app straight from a folder.</p>
+
+      <div class="downloads">
+        <a class="dl primary" id="dl-setup" href="FashTutoring-Setup.exe" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+          <span class="dl-text">
+            <span class="dl-title">Download the installer</span><br>
+            <span class="dl-sub">Recommended. Adds a desktop shortcut.</span>
+          </span>
+          <span class="dl-size" data-size></span>
+        </a>
+
+        <a class="dl" id="dl-zip" href="FashTutoring-Windows.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          <span class="dl-text">
+            <span class="dl-title">Download the full app (.zip)</span><br>
+            <span class="dl-sub">No install. Extract it and run Fash Tutoring.exe.</span>
+          </span>
+          <span class="dl-size" data-size></span>
+        </a>
+      </div>
+
+      <p class="specs">Windows 10 or 11, 64-bit. Needs an internet connection.</p>
+    </div>
+
+    <div class="window" aria-hidden="true">
+      <div class="win-bar"><i></i><span>Fash Tutoring</span></div>
+      <div class="win-body">
+        <div class="win-side"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <div class="win-main">
+          <div class="win-search"></div>
+          <div class="win-grid"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="info">
+    <div class="wrap info-grid">
+      <div>
+        <h2>How to install</h2>
+        <ol class="steps">
+          <li><strong>Download the installer</strong><span>Save FashTutoring-Setup.exe to your computer.</span></li>
+          <li><strong>Open it</strong><span>Double-click the file and choose where to install the app.</span></li>
+          <li><strong>Launch Fash Tutoring</strong><span>Use the desktop shortcut or the Start menu.</span></li>
+        </ol>
+        <h2 style="margin-top:40px">Using the zip instead</h2>
+        <ol class="steps">
+          <li><strong>Extract the whole zip</strong><span>Right-click it and choose Extract All. Don't run it from inside the zip.</span></li>
+          <li><strong>Run Fash Tutoring.exe</strong><span>Keep the folder together and put it anywhere you like.</span></li>
+        </ol>
+      </div>
+
+      <div>
+        <div class="note">
+          <h3>Windows shows a blue warning screen</h3>
+          <p>The app isn't code-signed, so Windows SmartScreen may say it protected your PC. Choose More info, then Run anyway.</p>
+        </div>
+        <div class="note">
+          <h3>Updating</h3>
+          <p>Download the newest installer and run it over the old version. Your accounts and settings stay in place.</p>
+        </div>
+        <div class="note">
+          <h3>Removing the app</h3>
+          <p>Open Settings, then Apps, find Fash Tutoring and choose Uninstall. If you used the zip, delete the folder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Fash Tutoring, made by FJ Studios.</div>
+</footer>
+
+<script>
+  // When the page is hosted online, show file sizes and grey out a button if its file wasn't uploaded.
+  (function () {
+    if (!/^https?:$/.test(location.protocol)) return;
+    ['dl-setup', 'dl-zip'].forEach(function (id) {
+      var a = document.getElementById(id);
+      fetch(a.getAttribute('href'), { method: 'HEAD' }).then(function (r) {
+        if (!r.ok) { a.classList.add('missing'); a.querySelector('[data-size]').textContent = 'Not uploaded yet'; return; }
+        var n = parseInt(r.headers.get('content-length'), 10);
+        if (n) a.querySelector('[data-size]').textContent = (n / 1048576).toFixed(0) + ' MB';
+      }).catch(function () {});
+    });
+  })();
+</script>
+</body>
+</html>
