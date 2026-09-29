@@ -165,7 +165,7 @@
       <p class="lead">Games, music, chat and a built-in browser in one desktop app. Install it, or run the full app straight from a folder.</p>
 
       <div class="downloads">
-        <a class="dl primary" id="dl-setup" href="FashTutoring-Setup.exe" download>
+        <a class="dl primary" id="dl-setup" href="https://github.com/snchryan675-lgtm/FashTutoring/releases/latest/download/FashTutoring-Setup.exe" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
           <span class="dl-text">
             <span class="dl-title">Download the installer</span><br>
@@ -174,7 +174,7 @@
           <span class="dl-size" data-size></span>
         </a>
 
-        <a class="dl" id="dl-zip" href="FashTutoring-Windows.zip" download>
+        <a class="dl" id="dl-zip" href="https://github.com/snchryan675-lgtm/FashTutoring/releases/latest/download/FashTutoring-Windows.zip" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
           <span class="dl-text">
             <span class="dl-title">Download the full app (.zip)</span><br>
@@ -243,6 +243,7 @@
     if (!/^https?:$/.test(location.protocol)) return;
     ['dl-setup', 'dl-zip'].forEach(function (id) {
       var a = document.getElementById(id);
+      if (a.origin !== location.origin) return; // links to GitHub Releases: skip the check
       fetch(a.getAttribute('href'), { method: 'HEAD' }).then(function (r) {
         if (!r.ok) { a.classList.add('missing'); a.querySelector('[data-size]').textContent = 'Not uploaded yet'; return; }
         var n = parseInt(r.headers.get('content-length'), 10);
